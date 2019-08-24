@@ -3,6 +3,8 @@
 body {
   margin: 0;
   font: 17px Trebuchet MS, Arial, Helvetica, sans serif;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 a {

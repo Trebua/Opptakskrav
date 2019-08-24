@@ -10,10 +10,10 @@ div.topListsContainer
                 tr
                     td #{row.number}
                     td 
-                        a(href="/#{row.code}") #{row.study}
+                        a(href=`/${row.code}`) #{row.study}
                     td 
-                        a(href="sok?sokeord=#{row.school}") #{row.school}
-                    td #{row.grade}
+                        a(href=`sok?sokeord=${row.school}`) #{row.school}
+                    td #{row.grade.toFixed(1)}
     table.topList
         caption Høyeste poenggrenser for ordinær kvote i #{latestYear}
         tr
@@ -25,7 +25,7 @@ div.topListsContainer
                 tr
                     td #{row.number}
                     td
-                        a(href="/#{row.code}") #{row.study}
+                        a(href=`/${row.code}`) #{row.study}
                     td
-                        a(href="sok?sokeord=#{row.school}") #{row.school}
-                    td #{row.grade}
+                        a(href=`sok?sokeord=${row.school}`) #{row.school}
+                    td #{row.grade.toFixed(1)}

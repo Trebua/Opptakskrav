@@ -1,0 +1,39 @@
+extends layout
+
+block variables
+  - var chartScript = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"
+  - var siteName = `${data.study} | ${data.short_school}`
+  - var metaDescription = `Vil du studere ${data.study} ved ${data.short_school}? Ved forrige opptak var poenggrensen ${data.ORDF[data.ORDF.length-1]} for førstegangsvitnemål, og ${data.ORD[data.ORD.length-1]} for ordinær kvote. Klikk for å se hva vi tror opptakskravene blir neste år.`
+
+block content
+    div.studyContainer
+        h1.studyH1 #{data.study}
+        h2.studyH2 #{data.school}
+        div.tableContainer
+            table.gradeTable
+                caption Poenggrenser
+                tr.yearsRow
+                    th
+                    each year in data.years
+                        th(scope="col") #{year}
+                    if chartConfig.validORDPred || chartConfig.validORDFPred
+                        th(scope="col") Prediksjon for #{parseInt(data.predictionYears[data.predictionYears.length-1])}*
+                tr.ORDFRow
+                    th.rightAlign(scope="row") Førstegangsvitnemål (FØR)
+                    each grade in data.ORDF
+                        td #{grade}
+                    if chartConfig.validORDFPred
+                        td #{data.ORDFPred[data.ORDFPred.length-1]}
+                    else if chartConfig.validORDPred
+                        td -
+                tr.ORDRow
+                    th.rightAlign(scope="row") Ordinær kvote (ORD)
+                    each grade in data.ORD
+                        td #{grade}
+                    if chartConfig.validORDPred
+                        td #{data.ORDPred[data.ORDPred.length-1]}
+                    else if chartConfig.validORDFPred
+                        td -
+            if chartConfig.validORDPred || chartConfig.validORDFPred
+                p.tableDescription * Prediksjon er eksperimentelt og garanterer på ingen måte hva poenggrensen blir neste år.
+        include includes/chart.pug

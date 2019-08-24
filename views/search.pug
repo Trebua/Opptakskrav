@@ -1,0 +1,18 @@
+extends layout
+
+block variables
+  - var siteName = 'Søk'
+  - siteName += searchQuery ? ' | ' + (searchQuery.length > 11 ? searchQuery.substring(0,11) + '..' : searchQuery) : ''
+  - var metaDescription = `Søk etter hvilket som helst studie ved offentlige høgskoler og universiteter og se hva opptakskravene har vært og kan bli.`
+
+block content
+    div.centerContent
+        h1.searchHeading.centerText #{headerText}
+        include includes/searchField.pug
+        if searchQuery
+            p.searchDescription #{numMatches ? `${numMatches} treff` : 'Ingen treff'}
+        div.searchResultContainer
+            ul.searchResultsList
+                each code, study in matches
+                    li.searchResultElement
+                        a.searchResultElementLink(href=code)= study

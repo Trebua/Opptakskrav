@@ -1,8 +1,401 @@
+/*--------- General ---------*/
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font: 17px Trebuchet MS, Arial, Helvetica, sans serif;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: inherit;
+}
+
+.centerContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.centerText {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.displayNone {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.welcomeHeading,
+.searchHeading {
+  font-weight: normal;
+}
+
+table {
+  margin: 30px 10px 10px 0;
+  border-spacing: 0;
+  border: 1px solid !important;
+}
+
+.topListContainer table {
+  margin-left: 10px;
+}
+
+tr:hover {
+  background-color: #9fd1f5;
+}
+
+@media screen and (max-width: 620px) {
+  .topListsContainer td,
+  .topListsContainer th {
+    padding: 10px 5px;
+  }
+  table {
+    font-size: 14px;
+  }
+}
+/*--------- Search results ---------*/
+
+.searchDescription {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+li.searchResultElement {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #77b5e0;
+  border: solid #042740;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+li.searchResultElement:hover {
+  background-color: #9fd1f5;
+  transform: scale(1.03);
+}
+
+li.searchResultElement a {
+  padding: 0 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+div.searchResultContainer {
+  width: 60%;
+}
+
+@media screen and (max-width: 620px) {
+  div.searchResultContainer {
+    width: 80%;
+  }
+  li.searchResultElement {
+    height: 70px;
+  }
+}
+
+/*---------- Header ---------*/
+
+.headerContainer {
+  margin-bottom: 30px;
+}
+
+header {
+  background-color: #77b5e0;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1.headerTitle {
+  display: inline;
+  font-weight: normal;
+  font-size: 1.8em;
+}
+
+a.headerHome {
+  display: flex;
+  align-items: center;
+}
+
+a.headerHome .headerImg {
+  height: 80px;
+  width: 80px;
+  background: url(/images/logo.png) no-repeat;
+  background-size: cover;
+}
+
+a.headerHome:hover .headerImg {
+  background: url(/images/logo_hover.png) no-repeat;
+  background-size: cover;
+}
+
+/* Burger menu */
+#mobileNav {
+  background-color: #77b5e0;
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.mobileNavList {
+  margin: 0;
+}
+
+.mobileNavList li {
+  padding: 7px 10px;
+  font-size: 20px;
+}
+
+.burgerContainer {
+  display: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media screen and (max-width: 620px) {
+  .burgerContainer {
+    display: inline-block !important;
+  }
+  .desktopNav {
+    display: none;
+  }
+}
+
+/* Desktop nav */
+
+nav.desktopNav li {
+  position: relative;
+}
+
+nav.desktopNav li:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+nav.desktopNav li:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+ul.desktopNavList li {
+  display: inline;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+/*---------- Footer ---------*/
+
+footer {
+  height: 100px;
+  background-color: #77b5e0;
+  margin-top: 60px;
+  padding: 20px 0;
+}
+
+footer.centerContent {
+  align-items: flex-start;
+}
+
+footer p {
+  margin: 5px 20% 5px 25%;
+  font-size: 14px;
+}
+
+/*--------- Search field ---------*/
+.searchField {
+  height: 30px;
+  min-width: 240px;
+  vertical-align: middle;
+  border: 0;
+  border-bottom: solid 1px;
+  padding-left: 5px;
+  font: 16px Trebuchet MS, Arial, Helvetica, sans serif;
+}
+
+.searchSubmit {
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  margin-left: 20px;
+  transition: all 0.5s;
+  background: url(/images/search.png) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  border: none;
+}
+
+.searchSubmit:hover {
+  transform: scale(1.2);
+}
+
+/*--------- Index page ----------*/
+.welcomeHeading,
+.welcomeDescription {
+  margin-bottom: 5px;
+}
+
+.welcomeDescription {
+  margin-bottom: 30px;
+  max-width: 420px;
+}
+
+.topListsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topListsContainer table {
+  margin-top: 50px;
+  width: 92%;
+}
+
+.topListsContainer th,
+.yearsRow {
+  text-align: left;
+  background-color: #77b5e0 !important;
+  height: 40px;
+}
+
+.topListsContainer .topList,
+.topListsContainer .topList * {
+  border: none;
+}
+
+.topListsContainer caption {
+  margin-bottom: 10px;
+}
+
+/*--------- Study page ----------*/
+.studyContainer {
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 620px) {
+  .studyContainer {
+    padding: 0 5px;
+  }
+}
+
+p.tableDescription {
+  font-size: 14px;
+  color: #343638;
+  margin-top: 5px;
+}
+
+td,
+th {
+  padding: 10px 20px;
+}
+
+th.rightAlign {
+  text-align: right;
+  padding: 5px 20px;
+}
+
+.chartContainer {
+  margin-top: 60px;
+}
+
+.studyH1,
+.studyH2 {
+  margin: 0;
+}
+
+.studyH2 {
+  font-weight: normal;
+}
+
+.tableContainer,
+.topListScroll {
+  overflow-x: auto;
+}
+
+.gradeTable caption {
+  text-align: left;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.leftAlign {
+  text-align: left;
+}
+
+/*--------- About ----------*/
+
+.aboutSection {
+  width: 60%;
+  border: solid;
+  padding: 10px 30px;
+  margin-top: 30px;
+  background-color: #9fd1f5;
+}
+
+.normalWeight {
+  font-weight: normal;
+}
+
+.aboutSection a {
+  text-decoration: underline;
+}
+
+.aboutSection h2 {
+  margin-top: 10px;
+}
+
+/*---------- usefulLinks --------*/
+a.aboutSection {
+  transition: all 0.3s;
+}
+a.aboutSection:hover {
+  background-color: #9fd1f5;
+  transform: scale(1.03);
 }

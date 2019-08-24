@@ -1,0 +1,12 @@
+extends layout
+
+block variables
+  - var siteName = 'Hjem'
+  - var metaDescription = 'Vi ønsker å gjøre det enklere for deg å finne ut hva opptakskravene er, og hva snittet for å komme inn på ulike studier vil bli ved neste opptak.'
+
+block content
+  div.centerContent
+    h1.welcomeHeading.centerText Velkommen til opptakskrav.no
+    p.welcomeDescription.centerText Vi ønsker å gjøre det enklere for deg å få oversikt over opptakskrav for ulike høgskole- og universitetsstudier.
+    include includes/searchField.pug
+    include includes/topLists.pug

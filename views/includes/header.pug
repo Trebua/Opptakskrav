@@ -1,0 +1,30 @@
+div.headerContainer
+    header
+        a.headerHome(href="/")
+            div.headerImg(title="logo")
+            h1.headerTitle Opptakskrav
+        nav.desktopNav
+            ul.desktopNavList
+                li 
+                    a(href="/") Hjem
+                li
+                    a(href="/sok") Søk
+                li
+                    a(href="/om") Om
+                li
+                    a(href="/nyttige-lenker") Nyttige lenker
+        div.burgerContainer(onclick="toggleMenu(this)")
+            div.bar1
+            div.bar2
+            div.bar3
+    nav.displayNone#mobileNav
+        ul.mobileNavList
+            li 
+                a(href="/") Hjem
+            li
+                a(href="/sok") Søk
+            li
+                a(href="/om") Om
+            li
+                a(href="/nyttige-lenker") Nyttige lenker
+    script(src="./javascripts/burgerMenu.js")

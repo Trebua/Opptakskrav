@@ -1,0 +1,8 @@
+extends layout
+
+block variables
+  - var siteName = `Feilmelding`
+
+block content
+  div.centerContent
+    h1 #{msg ? msg : "Denne siden finnes ikke"}

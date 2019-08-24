@@ -1,0 +1,32 @@
+extends layout
+
+block variables
+  - var siteName = `Om`
+  - var metaDescription = `Klikk for å lese mer om hvilket datagrunnlag som brukes for å vise poenggrenser til ulike studier, og hvordan vi predikerer neste års snitt.`
+
+block content
+    div.centerContent
+        h1.normalWeight Om
+        div.aboutSection
+            h2 Ingen tilknytning til Samordna Opptak
+            p Nettsiden har ingen offisiell tilknytning til Samordna Opptak. Datagrunnlaget er basert på poenggrenser for suppleringsopptaket som publiseres hvert år. 
+                a(href="https://www.samordnaopptak.no/info/opptak/poenggrenser/poenggrenser-tidligere-ar/") Datagrunnlaget kan sees hos Samordna Opptak.
+            p Nettsiden kan selvfølgelig inneholde feil og mangler. Det rådes derfor å alltid dobbeltsjekke eventuelle poenggrenser med Samordna Opptak.
+        div.aboutSection
+            h2 Prediksjon
+            p På de fleste studier blir det predikert hva opptakskravet vil bli neste år. Det er viktig å påpeke at dette kun er et estimat. Estimatet gjøres gjennom 
+                a(href="https://no.wikipedia.org/wiki/Line%C3%A6r_regresjon") lineær regresjon.
+        div.aboutSection
+            h2 Forklaring på angitte poenggrenser
+            p 0: Hvis en poenggrense er angitt som 0, betyr det at kvoten ikke brukes.
+            p 20: Hvis en poenggrense er angitt som 20, betyr det at alle kvalifiserte søkere kom inn.
+        div.aboutSection
+            h2 Sammenligning av poenggrenser
+            p Rangerings- og kvalifikasjonsregelverket endrer seg stadig, så poenggrenser kan ikke alltid direkte sammenliknes mellom ulike år. De siste årene har det riktignok vært mest små endringer.
+        div.aboutSection
+            h2 Kvoter
+            p Poenggrenser for ulike kvoter som for eksempel forkurskvote, jentekvote osv. benyttes ikke på denne siden. Poenggrensene som vises er kun for ordinær kvote og førstegangsvitnemål. 
+                a(href="https://sok.samordnaopptak.no/#/studies") Poenggrenser for ulike kvoter er å finne hos Samordna Opptak.
+        div.aboutSection
+            h2 Kontakt
+            p Kontaktinformasjon kommer senere

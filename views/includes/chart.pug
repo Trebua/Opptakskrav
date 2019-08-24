@@ -1,0 +1,62 @@
+div.chartContainer
+    canvas#pointChart(style="height:100%; min-height: 200px;", role="img", aria-label="Graf som viser historiske opptakskrav")
+        script.
+            var ctx = document.getElementById("pointChart").getContext("2d");
+            var myChart = new Chart(ctx, {
+            type: "line",
+            maintainAspectRatio : false,
+            data: {
+                labels: [#{chartConfig.validORDFPred || chartConfig.validORDPred ? data.predictionYears : data.years}],
+                datasets: [
+                    {
+                        label: "FØR",
+                        data: [#{data.ORDF}, "-"],
+                        tension: 0,
+                        borderColor: 'rgba(0, 179, 33, 1)',
+                        backgroundColor: 'rgba(0, 179, 33, 0.2)',
+                    },
+                    {
+                        label: "Prediksjon for førstegangsvitnemål",
+                        data: #{chartConfig.validORDFPred} ? [#{data.ORDFPred}] : null,
+                        tension: 0,
+                        borderColor: 'rgba(0, 179, 33, 1)',
+                        backgroundColor: 'rgba(0, 179, 33, 0.2)',
+                        borderDash: [6,6],
+                    },
+                    {
+                        label: "ORD",
+                        data: [#{data.ORD}],
+                        tension: 0,
+                        borderColor: 'rgba(48, 149, 219, 1)',
+                        backgroundColor: 'rgba(48, 149, 219, 0.2)',
+                    },
+                    {
+                        label:"Prediksjon for ordinær kvote",
+                        data: #{chartConfig.validORDPred} ? [#{data.ORDPred}] : null,
+                        borderColor: 'rgba(48, 149, 219, 1)',
+                        backgroundColor: 'rgba(48, 149, 219, 0.2)',
+                        tension: 0,
+                        borderDash: [6,6],
+                    },
+                ]
+            },
+            options: {
+                legend: {
+                    labels: {
+                        filter: function(item, chart) {
+                            return !item.text.includes('Prediksjon');
+                        }
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                    ticks: {
+                            max: #{chartConfig.max},
+                            min: #{chartConfig.min},
+                            stepSize: 5,
+                        }
+                    }],
+                }
+                
+            }
+            });

@@ -1,0 +1,19 @@
+block variables
+
+doctype html
+html(lang="nb")
+  head
+    title #{siteName} - Opptakskrav
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    meta(name="description" content="#{metaDescription}")
+    meta(name="robots" content="index, follow")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
+    link(rel="icon" href="/favicon.ico" type="image/x-icon")
+    if chartScript
+      script(src=chartScript)
+  body
+    include includes/header.pug
+    block content
+    include includes/footer.pug

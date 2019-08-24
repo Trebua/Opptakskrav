@@ -1,0 +1,31 @@
+div.topListsContainer
+    table.topList
+        caption Høyeste poenggrenser for førstegangsvitnemål i #{latestYear}
+        tr
+            th(scope="col") #
+            th(scope="col") Studienavn
+            th(scope="col") Skole
+            th(scope="col") Poenggrense
+            each row in topList.ORDF
+                tr
+                    td #{row.number}
+                    td 
+                        a(href="/#{row.code}") #{row.study}
+                    td 
+                        a(href="sok?sokeord=#{row.school}") #{row.school}
+                    td #{row.grade}
+    table.topList
+        caption Høyeste poenggrenser for ordinær kvote i #{latestYear}
+        tr
+            th(scope="col") #
+            th(scope="col") Studienavn
+            th(scope="col") Skole
+            th(scope="col") Poenggrense
+            each row in topList.ORD
+                tr
+                    td #{row.number}
+                    td
+                        a(href="/#{row.code}") #{row.study}
+                    td
+                        a(href="sok?sokeord=#{row.school}") #{row.school}
+                    td #{row.grade}

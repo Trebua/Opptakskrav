@@ -14,6 +14,14 @@ html(lang="nb")
     link(rel="icon" href="/favicon.ico" type="image/x-icon")
     if chartScript
       script(src=chartScript)
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-146418412-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-146418412-1');
+
   body
     include includes/header.pug
     block content

@@ -2,7 +2,7 @@ extends layout
 
 block variables
   - var siteName = 'Søk'
-  - siteName += searchQuery ? ' | ' + (searchQuery.length > 11 ? searchQuery.substring(0,11) + '..' : searchQuery) : ''
+  - siteName += searchQuery ? ': ' + (searchQuery.length > 11 ? searchQuery.substring(0,11) + '.. | ' : searchQuery + ' | ') : ' | '
   - var metaDescription = `Søk etter hvilket som helst studie ved offentlige høgskoler og universiteter og se hva opptakskravene har vært og kan bli.`
 
 block content

@@ -51,7 +51,7 @@ router.get("/:id([0-9]+)", function(req, res, next) {
     ...data.years,
     parseInt(data.years[data.years.length - 1]) + 1
   ];
-  res.render("study", { data, chartConfig });
+  res.render("study", { data, chartConfig, latestYear });
 });
 
 router.get("/om", function(req, res) {

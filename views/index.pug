@@ -1,12 +1,12 @@
 extends layout
 
 block variables
-  - var siteName = 'Hjem'
-  - var metaDescription = 'Vi ønsker å gjøre det enklere for deg å finne ut hva opptakskravene er, og hva snittet for å komme inn på ulike studier vil bli ved neste opptak.'
+  - var siteName = ''
+  - var metaDescription = `Se hva opptakskravene for ulike studier på Samordna Opptak var i ${latestYear}, og hva vi tror poenggrensene vil være i ${parseInt(latestYear)+1}.`
 
 block content
   div.centerContent
-    h1.welcomeHeading.centerText Velkommen til opptakskrav.no
-    p.welcomeDescription.centerText Vi ønsker å gjøre det enklere for deg å få oversikt over opptakskrav for ulike høgskole- og universitetsstudier.
+    h1.welcomeHeading.centerText Velkommen til Opptaket
+    p.welcomeDescription.centerText Vi gir deg oversikt over opptakskrav for ulike høgskole- og universitetsstudier, i tillegg til å predikere hva poenggrensene kan bli ved neste opptak.
     include includes/searchField.pug
     include includes/topLists.pug

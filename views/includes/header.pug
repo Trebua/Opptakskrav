@@ -1,18 +1,18 @@
-div.headerContainer
+div#headerContainer
     header
         a.headerHome(href="/")
             div.headerImg(title="logo")
-            h1.headerTitle Opptaket
+            h1.headerTitle OPPTAKET
         nav.desktopNav
             ul.desktopNavList
                 li 
-                    a(href="/") Hjem
+                    a(href="/") HJEM
                 li
-                    a(href="/sok") Søk
+                    a(href="/sok") SØK
                 li
-                    a(href="/om") Om
+                    a(href="/om") OM
                 li
-                    a(href="/nyttige-lenker") Nyttige lenker
+                    a(href="/nyttige-lenker") NYTTIGE LENKER
         div.burgerContainer(onclick="toggleMenu(this)")
             div.bar1
             div.bar2
@@ -20,11 +20,12 @@ div.headerContainer
     nav.displayNone#mobileNav
         ul.mobileNavList
             li 
-                a(href="/") Hjem
+                a(href="/") HJEM
             li
-                a(href="/sok") Søk
+                a(href="/sok") SØK
             li
-                a(href="/om") Om
+                a(href="/om") OM
             li
-                a(href="/nyttige-lenker") Nyttige lenker
+                a(href="/nyttige-lenker") NYTTIGE LENKER
     script(src="./javascripts/burgerMenu.js")
+    script(src="./javascripts/stickyHeader.js")

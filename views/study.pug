@@ -11,7 +11,7 @@ block content
         h2.studyH2 #{data.school}
         div.tableContainer
             table.gradeTable
-                caption Poenggrenser
+                caption Snittet for å komme inn på #{data.study.toLowerCase()} ved #{data.short_school}
                 tr.yearsRow
                     th
                     each year in data.years
@@ -35,5 +35,5 @@ block content
                     else if chartConfig.validORDFPred
                         td -
             if chartConfig.validORDPred || chartConfig.validORDFPred
-                p.tableDescription * Prediksjon er eksperimentelt og garanterer på ingen måte hva poenggrensen blir neste år.
+                p.tableDescription * Prediksjon ser på historiske opptakskrav og estimerer hva neste års poenggrense kan bli.
         include includes/chart.pug

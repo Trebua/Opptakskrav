@@ -1,11 +1,13 @@
 div.topListsContainer
     table.topList
         caption Høyeste poenggrenser for førstegangsvitnemål i #{latestYear}
-        tr
-            th(scope="col") #
-            th(scope="col") Studienavn
-            th(scope="col") Skole
-            th(scope="col") Poenggrense
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Studienavn
+                th(scope="col") Skole
+                th(scope="col") Poenggrense
+        tbody
             each row in topList.ORDF
                 tr
                     td #{row.number}
@@ -16,11 +18,13 @@ div.topListsContainer
                     td #{row.grade.toFixed(1)}
     table.topList
         caption Høyeste poenggrenser for ordinær kvote i #{latestYear}
-        tr
-            th(scope="col") #
-            th(scope="col") Studienavn
-            th(scope="col") Skole
-            th(scope="col") Poenggrense
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Studienavn
+                th(scope="col") Skole
+                th(scope="col") Poenggrense
+        tbody
             each row in topList.ORD
                 tr
                     td #{row.number}

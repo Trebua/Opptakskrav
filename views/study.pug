@@ -2,8 +2,8 @@ extends layout
 
 block variables
   - var chartScript = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"
-  - var siteName = `${data.study} - ${data.short_school} | `
-  - var metaDescription = `Vil du studere ${data.study} ved ${data.short_school}? I ${latestYear} var snittet ${data.ORDF[data.ORDF.length-1]} for førstegangsvitnemål, og ${data.ORD[data.ORD.length-1]} for ordinær kvote. Klikk for å se hva vi tror opptakskravene blir i ${parseInt(latestYear)+1}.`
+  - var siteName = `Poenggrenser for ${data.study} ved ${data.short_school} | `
+  - var metaDescription = `Vil du studere ${data.study} ved ${data.short_school}? I ${latestYear} var poenggrensen ${data.ORDF[data.ORDF.length-1]} for førstegangsvitnemål, og ${data.ORD[data.ORD.length-1]} for ordinær kvote. Klikk for å se hva vi tror opptakskravene blir i ${parseInt(latestYear)+1}.`
 
 block content
     div.studyContainer
